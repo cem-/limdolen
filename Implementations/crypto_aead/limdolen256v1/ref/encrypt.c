@@ -83,7 +83,7 @@ void e256Rounds(unsigned char *c, const unsigned char *k) {
         // left side
         e128Round(c, k, roundConst);
         //right side
-        e128Round(&c[CRYPTO_BYTES/2], k, roundConst);
+        e128Round(&c[CRYPTO_BYTES/2], &k[CRYPTO_BYTES/2], roundConst);
         //swap sides
         for(int i=0; i<CRYPTO_BYTES/2;i++) {
             //temp = c[i];
